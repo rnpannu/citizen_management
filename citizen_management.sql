@@ -139,7 +139,7 @@ INSERT INTO 'political party'('party leader', 'party name', 'party number') VALU
 (235438514) ('Bart Simpson', 'Broke Gamer Party of America', 4)
 (324536457) ('Lisa Simpson', 'Smart Party Nobody Cares' 3)
 (454689763) ('Meg', 'Shut up Meg of Feminism', 2)
-(382495769) ('Kevin Fiege', 'Bad Marvel Pics of America', 1) 
+(382495769) ('Kevin Feige', 'Bad Marvel Pics of America', 1) 
 
 
 
