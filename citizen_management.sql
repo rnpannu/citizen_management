@@ -248,7 +248,22 @@ INSERT INTO 'political party'('party leader', 'party name', 'party number') VALU
 
 
 --- Table structure for "Region"
+CREATE TABLE 'region'(
+    'population' int NOT NULL,
+    'name' varchar(50) DEFAULT NULL,
+    'northBorder' int NOT NULL,
+    'eastBorder' int NOT NULL,
+    'southBorder' int NOT NULL,
+    'westBorder' int NOT NULL,
+    PRIMARY KEY ('name')
+);
 
+INSERT INTO 'region' ('population', 'name', 'northBorder', 'eastBorder', 'southBorder', 'westBorder') VALUES
+('124840000', 'Gnodgnaug', '50', '75', '50', '75')
+('81100000', 'Nauhcis', '30', '35', '30', '35')
+('9258000', 'Naniah', '40', '60', '40', '60')
+('57370000', 'Gnaijehz', '70', '60', '70', '60')
+('38560000', 'Naijuf', '50', '45', '50', '45')
 
 
 
