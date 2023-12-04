@@ -1,14 +1,16 @@
 <html>
-<head><link rel="stylesheet" type="text/css" href="style.css" /><title>Manager for the residents of University Hall</title></head>
-<body><div class="banner">
-        <h1>QUERY A RESIDENT</h1>
-    </div></body><?php
+<head><link rel="stylesheet" type="text/css" href="style.css" /><title>Manager for the regions of University Hall</title></head>
+<body>
+<div class="banner">
+        <h1>QUERY A REGION</h1>
+    </div>
+<?php
 
 try{
   
 if(isset($_COOKIE["username"]))
 {
-   echo "<form action=\"queryresident.php\" method=post>";
+   echo "<form action=\"queryregion.php\" method=post>";
 	
    $username = $_COOKIE["username"];
    $password = $_COOKIE["password"];	
@@ -23,7 +25,7 @@ if(isset($_COOKIE["username"]))
       exit; 
    }
 
-   $sql = "SELECT SIN, residentName FROM RESIDENT";
+   $sql = "SELECT regionName FROM REGION";
 
    try {
     $result = $conn->query($sql);
@@ -35,18 +37,18 @@ if(isset($_COOKIE["username"]))
 
    if($result->num_rows > 0)
    {
-      echo "Resident Name: <select name=\"SIN\">";
+      echo "Region Name: <select name=\"regionName\">";
 	      
       while($val = $result->fetch_assoc())
       {
-            echo "<option value='{$val['SIN']}'>{$val['SIN']} - {$val['residentName']}</option>";       
+            echo "<option value='{$val['regionName']}'>{$val['regionName']}</option>";       
       }
       echo "</select>"; 
       echo "<input type=submit name=\"submit\" value=\"View\">"; 
    }
    else
    {
-      echo "<p>There are no people in the system!</p>"; 
+      echo "<p>There are no regions in the system!</p>"; 
    }
    
    echo "</form>";

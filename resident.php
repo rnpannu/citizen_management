@@ -3,8 +3,11 @@
 <head>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            /*background-image: url('yqp997.jpg');*/
+            font-family: "Space Mono", monospace;
+            font-size: 45px;
+            font-weight: bold;
+            color: gold;
+            background-image: url('background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -13,57 +16,61 @@
             flex-direction: column; /* Stack elements vertically */
             align-items: center;
             min-height: 100vh;
-            color: white;
+            color: gold;
             margin: 0; /* Remove default margin */
         }
 
         .banner {
+            font: "Oswald", sans-serif, bold, gold, 70px;
             width: 100%;
-            background-color: #333333; /* Dark background for the banner */
-            padding: 15px 0;
+            background-color: #8b0000; /* Dark background for the banner */
+            padding: 50px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to the banner */
         }
 
         .banner h1 {
+            font: Impact, sans-serif, bold, gold, 45px;
             margin: 0;
-            color: white;
+            color: gold;
         }
-
+        /*
         .navigation-menu {
-            background-color: #f8f8f8; /* Light background for the navigation menu */
+            background-color: #98FB98; 
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-top: 30px;
-            width: 80%; /* Adjust as per requirement */
-            max-width: 500px; /* Maximum width of the menu */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            margin-top: 60px;
+            width: 80%; 
+            max-width: 500px; 
         }
-
+        */
         .nav-button {
-            background-color: #4CAF50; /* Green background for buttons */
+            background-color: #43464B; 
             color: white;
+            font: "Helvetica", sans-serif, bold, white;
             padding: 10px 15px;
             border: none;
-            border-radius: 5px;
-            margin: 10px 0;
-            width: 100%; /* Full width buttons */
-            cursor: pointer;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 30px;
+            width: 20%; /* Full width buttons */
+            /* Start https://www.cursors-4u.com */ cursor: url(https://cur.cursors-4u.net/others/oth-5/oth435.cur), auto !important; /* End https://www.cursors-4u.com */
             transition: background-color 0.3s;
         }
 
         .nav-button:hover {
-            background-color: #45a049; /* Darker green on hover */
+            background-color: #1B1D1E; 
         }
 
         .logout-link {
             color: white;
             background-color: transparent;
             padding: 5px;
-            margin-top: 20px;
+            margin-top: 300px;
             text-decoration: none;
+            font-size: 30px;
         }
-
         .logout-link:hover {
             text-decoration: underline;
         }
@@ -71,15 +78,15 @@
 </head>
 <body>
     <div class="banner">
-        <h1>Accessing The Person Table</h1>
+        <h1>RESIDENT</h1>
     </div>
 
     <div class="navigation-menu">
         <form action="#" method="post"> 
-            <button type="submit" formaction="insert_resident.php" class="nav-button">Insert into the Resident table</button>
-            <button type="submit" formaction="delete_resident.php" class="nav-button">Delete from the Resident table</button>
-            <button type="submit" formaction="update_resident.php" class="nav-button">Update the Resident table</button>
-            <button type="submit" formaction="query_resident.php" class="nav-button">Query the Resident table (Search)</button>
+            <button type="submit" formaction="insert_resident.php" class="nav-button">Insert</button>
+            <button type="submit" formaction="delete_resident.php" class="nav-button">Delete</button>
+            <button type="submit" formaction="update_resident.php" class="nav-button">Update </button>
+            <button type="submit" formaction="query_resident.php" class="nav-button">Query</button>
         </form>
     </div>
 

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
+<style>
         body {
             font-family: "Space Mono", monospace;
             font-size: 45px;
             font-weight: bold;
             color: gold;
             background-image: url('background.jpg');
-            height: 50px;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -47,16 +46,15 @@
         }
         */
         .nav-button {
-            background-color: #43464B;
-            font: "Oswald", sans-serif, bold, gold, 45px;
+            background-color: #43464B; 
             color: white;
-            padding: 15px 32px;
+            font: "Helvetica", sans-serif, bold, white;
+            padding: 10px 15px;
             border: none;
             border-radius: 9px;
             display: inline-block;
             margin: 30px;
-            width: 50%; /* Full width buttons */
-            height: 100%;
+            width: 20%; /* Full width buttons */
             /* Start https://www.cursors-4u.com */ cursor: url(https://cur.cursors-4u.net/others/oth-5/oth435.cur), auto !important; /* End https://www.cursors-4u.com */
             transition: background-color 0.3s;
         }
@@ -69,7 +67,7 @@
             color: white;
             background-color: transparent;
             padding: 5px;
-            margin-top: 200px;
+            margin-top: 300px;
             text-decoration: none;
             font-size: 30px;
         }
@@ -80,14 +78,15 @@
 </head>
 <body>
     <div class="banner">
-        <h1>CITZEN SURVEILLANCE</h1>
+        <h1>REGION</h1>
     </div>
 
     <div class="navigation-menu">
         <form action="#" method="post"> 
-            <button type="submit" formaction="resident.php" class="nav-button">Access Resident Table</button>
-            <button type="submit" formaction="politicalparty.php" class="nav-button">Access Political Party Table</button>
-            <button type="submit" formaction="region.php" class="nav-button">Access Region Table</button>
+            <button type="submit" formaction="insert_region.php" class="nav-button">Insert</button>
+            <button type="submit" formaction="delete_region.php" class="nav-button">Delete</button>
+            <button type="submit" formaction="update_region.php" class="nav-button">Update</button>
+            <button type="submit" formaction="query_region.php" class="nav-button">Query</button>
         </form>
     </div>
 

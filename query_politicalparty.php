@@ -1,14 +1,14 @@
 <html>
-<head><link rel="stylesheet" type="text/css" href="style.css" /><title>Manager for the residents of University Hall</title></head>
+<head><link rel="stylesheet" type="text/css" href="style.css" /><title>Citizen Management Database - Political Party Table</title></head>
 <body><div class="banner">
-        <h1>QUERY A RESIDENT</h1>
-    </div></body><?php
+        <h1>QUERY A PARTY</h1>
+    </div><?php
 
 try{
   
 if(isset($_COOKIE["username"]))
 {
-   echo "<form action=\"queryresident.php\" method=post>";
+   echo "<form action=\"querypoliticalparty.php\" method=post>";
 	
    $username = $_COOKIE["username"];
    $password = $_COOKIE["password"];	
@@ -23,7 +23,7 @@ if(isset($_COOKIE["username"]))
       exit; 
    }
 
-   $sql = "SELECT SIN, residentName FROM RESIDENT";
+   $sql = "SELECT partyName FROM POLITICALPARTY";
 
    try {
     $result = $conn->query($sql);
@@ -35,18 +35,18 @@ if(isset($_COOKIE["username"]))
 
    if($result->num_rows > 0)
    {
-      echo "Resident Name: <select name=\"SIN\">";
+      echo "Party Name: <select name=\"partyName\">";
 	      
       while($val = $result->fetch_assoc())
       {
-            echo "<option value='{$val['SIN']}'>{$val['SIN']} - {$val['residentName']}</option>";       
+            echo "<option value='{$val['partyName']}'>{$val['partyName']} </option>";       
       }
       echo "</select>"; 
       echo "<input type=submit name=\"submit\" value=\"View\">"; 
    }
    else
    {
-      echo "<p>There are no people in the system!</p>"; 
+      echo "<p>There are no parties in the system</p>"; 
    }
    
    echo "</form>";

@@ -8,7 +8,7 @@ SET time_zone = "+00:00"
 --- Table Structure for table "resident"
 ---
 create table RESIDENT(
-    SIN int NOT NULL,
+    SIN int NOT NULL AUTO_INCREMENT,
     residentName varchar(50) DEFAULT NULL,
     addressOfResidence varchar(50) DEFAULT NULL,
     regionOfResidence varchar(20) DEFAULT NULL,
@@ -22,250 +22,43 @@ create table RESIDENT(
 --- Dumping data for table "resident"
 ---
 
-INSERT INTO RESIDENT (SIN, residentName, addressOfResidence, regionOfResidence, dateOfBirth, surveillanceLevel, creditScore) 
+INSERT INTO RESIDENT (residentName, addressOfResidence, regionOfResidence, dateOfBirth, surveillanceLevel, creditScore) 
 VALUES
-('123456789', 'Hasan Tareque', '4401 University Dr W, AB T1K 3M4, Lethbridge', 'Gnodgnaug', '1953-06-15', '9001', '-483084'),
-('987654321', 'Raheem Mir', '81 Nanchang Street, Xicheng District, Beijing', 'Nauhcis', '2003-02-05', '1', '999999999'),
-('786591745', 'Robert Benkoczi', '2711 US-95, Amargosa Valley, Nevada', 'Naniah', '1952-10-07', '100', '378001000'),
-('357829031', 'Nash Fischer', 'Fugging 4, 5121, Fugging', 'Gnaijehz', '2002-05-30', '4633', '4'),
-('651934799', 'Kaleb Calverly', '20785 Schultes Avenue, Detroit', 'Naijuf', '2001-04-04', '8944', '0');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+('Hasan Tareque', '4401 University Dr W, AB T1K 3M4, Lethbridge', 'Gnodgnaug', '1953-06-15', '9001', '-48308494'),
+('Raheem Mir', '81 Nanchang Street, Xicheng District, Beijing', 'Nauhcis', '2003-02-05', '1', '1001101011'),
+('Robert Benkoczi', '2711 US-95, Amargosa Valley, Nevada', 'Naniah', '1952-10-07', '100', '378001000'),
+('Nash Fischer', 'Fugging 4, 5121, Fugging', 'Gnaijehz', '2002-05-30', '4633', '4'),
+('Kaleb Calverly', '20785 Schultes Avenue, Detroit', 'Naijuf', '2001-04-04', '8944', '0'),
+('Supreme Leader Nasah Euqerat', '2014 Forest Hills Drive', 'North Carolina', '1985-01-28', '0', '999999999'),
+('Josh Giddey', '208 Thunder Drive, Oklahoma City 73102', 'Oklahoma', '2002-10-10', '21378142', '-1983278');
 
 
 --- Table structure for "Party"
 
 
 create table POLITICALPARTY(
-    leader varchar(100) DEFAULT NULL,
-    partyName varchar(100) DEFAULT NULL,
-    partyNumber int DEFAULT 0,
-    --'name' varchar(100) DEFAULT NULL
-    PRIMARY KEY (partyName),
-
+    leader int NOT NULL,
+    partyName varchar(100) NOT NULL,
+    patriotism int DEFAULT 0,
+    PRIMARY KEY (partyName)
 );
 --------- DATA DUMPING FOR POLITICAL PARTY, AND THE ATTRIBUTES OF THEM. 
 
-INSERT INTO POLITICALPARTY(leader, partyName, partyNumber) VALUES
-('Supreme Leader Nasah Euqerat', 'C756', '10'),
-('Leader Peter Griffin', 'The Fingerlicans', '9'),
-('Lord Darth Vader', 'The Empire', '8'),
-('Lois Griffin', 'The Kitchen party', '7'),
-('Bryan', 'The Yard Party of Poo', '6'),
-('Homer Simpson', 'The Simps Party of Donuts', '5'),
-('Bart Simpson', 'Broke Gamer Party of America', '4'),
-('Lisa Simpson', 'Smart Party Nobody Cares' '3'),
-('Meg', 'Shut up Meg of Feminism', '2'),
-('Kevin Feige', 'Bad Marvel Pics of America', '1'),
-
-
-
-
-
----
----INSERT INTO 'POLITICALPARTY'('leader', 'name', 'number') VALUES
----(348975987) ('Supreme Leader Nasah Euqerat', 'C756', 10),
----(457435435) ('Leader Peter Griffin', 'The Fingerlicans', 9),
----(059675194) ('Lord Darth Vader', 'The Empire', 8),
----(937528634) ('Lois Griffin', 'The Kitchen party', 7),
----(923759756) ('Bryan', 'The Yard Party of Poo', 6),
----(126348574) ('Homer Simpson', 'The Simps Party of Donuts', 5),
----(235438514) ('Bart Simpson', 'Broke Gamer Party of America', 4),
----(324536457) ('Lisa Simpson', 'Smart Party Nobody Cares' 3),
----(454689763) ('Meg', 'Shut up Meg of Feminism', 2),
----(382495769) ('Kevin Feige', 'Bad Marvel Pics of America', 1),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO POLITICALPARTY(leader, partyName, patriotism) VALUES
+('6', 'Student Union Party of UH C756', '34689015'),
+('3', 'Full stack developers of UH C556', '3'),
+('7', 'Vim Supremacists of UH B660', '1');
 
 
 --- Table structure for "Region"
 create table REGION(
-    regionPopulation int NOT NULL,
-    regionName varchar(50) DEFAULT NULL,
+    regionPopulation int DEFAULT 0,
+    regionName varchar(50) NOT NULL,
     northBorder int NOT NULL,
     eastBorder int NOT NULL,
     southBorder int NOT NULL,
     westBorder int NOT NULL,
-    PRIMARY KEY (regionName),
+    PRIMARY KEY (regionName)
 );
 
 INSERT INTO REGION (regionPopulation, regionName, northBorder, eastBorder, southBorder, westBorder) VALUES
@@ -274,20 +67,12 @@ INSERT INTO REGION (regionPopulation, regionName, northBorder, eastBorder, south
 ('9258000', 'Naniah', '40', '60', '40', '60'),
 ('57370000', 'Gnaijehz', '70', '60', '70', '60'),
 ('38560000', 'Naijuf', '50', '45', '50', '45'),
-
-
-
-
-
-
-
-
-
-
+('10439388', 'North Carolina', '60', '50', '60', '50'),
+('3959353', 'Oklahoma', '19', '85', '19', '85');
 
 alter table RESIDENT
-add constraint fk_regionOfResidence FOREIGN KEY (regionOfResidence) REFERENCES REGION (regionName) ON DELETE ON UPDATE CASCADE;
+add constraint fk_regionOfResidence FOREIGN KEY (regionOfResidence) REFERENCES REGION (regionName) ON DELETE CASCADE ON UPDATE CASCADE;
 
 alter table POLITICALPARTY
-add constraint fk_leader FOREIGN KEY ('leader') REFERENCES RESIDENT (residentName) ON DELETE ON UPDATE CASCADE;
+add constraint fk_leader FOREIGN KEY (leader) REFERENCES RESIDENT (SIN) ON DELETE CASCADE ON UPDATE CASCADE;
 
